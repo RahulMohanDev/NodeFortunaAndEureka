@@ -1,0 +1,23 @@
+{
+  "name": "nodefortunaandeureka",
+  "version": "1.0.0",
+  "description": "App for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RahulMohanDev/NodeFortunaAndEureka.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RahulMohanDev/NodeFortunaAndEureka/issues"
+  },
+  "homepage": "https://github.com/RahulMohanDev/NodeFortunaAndEureka#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
