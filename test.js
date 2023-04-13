@@ -1,27 +1,23 @@
-// what is a IIFE ? 
-
-// (function abc() {
-//     console.log("Hello World");
-// })();
+export var a =23;
+export var b =44;
 
 
-var a =23;
-var b =44;
 
-function abc() {
+export function xyz() {
     console.log("Hello World");
 }
 
-function xyz() {
-    console.log("Hello World");
-}
 
-console.log(__dirname);
-console.log(__filename);
+// default export
+export default function () {
+    console.log("Hello World xyz");
+};
 
-exports.abc = abc;
-exports.xyz = xyz;
+// named export
 
 
+// exports.abc = abc;
+// exports.xyz = xyz;
+// exports.a = a;
 
-//this will not execute
+

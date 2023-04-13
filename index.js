@@ -3,12 +3,33 @@
 // ES module
 // const os  = require('os');
 
-require('./test.js')
 // (()=>{
 //     var a =23;
 //     var b =44;
 // })()
-const { xyz, abc } = require('./test.js') 
+
+// const test = require('./test.js')
+
+// console.log(test);
+
+// const test = (()=>{
+//     let exports = {};
+//     var a =23;
+// var b =44;
+
+// function abc() {
+//     console.log("Hello World");
+// }
+
+// function xyz() {
+//     console.log("Hello World");
+// }
+
+// exports.abc = abc;
+// exports.xyz = xyz;
+
+// return exports;
+// })()
 
 // const obj =(function (exports, require, module) {
 
@@ -33,5 +54,39 @@ const { xyz, abc } = require('./test.js')
 
 // obj.xyz()
 
-var a = 44
+// var a = 44
+
+// test.xyz();
 // millions of line of code
+
+// default import
+// import TEST from './test.js';
+// named import
+// import {xyz,a,b} from './test.js';
+// import TestPotaot,{xyz,a,b} from './test.js';
+// import ReactPotato,{useState} from 'react';
+
+// 
+// import * as ALL from './test.js';
+
+
+// ALL.default();
+
+// console.log(ALL);
+
+
+// TEST();
+
+// code modules ! used to run code.
+
+// os module
+
+import os from 'os';
+
+
+// console.log(os.arch());
+
+// console.log(os.cpus());
+
+// console.log(os.freemem());
+
