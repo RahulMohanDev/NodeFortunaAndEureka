@@ -112,7 +112,6 @@ import { link, rmSync } from 'fs'
 //   }
 // }
 
-
 // function mouseClick() {
 //   browserEventEmitter.emit('click', { traget: 'rahul' })
 // }
@@ -123,27 +122,71 @@ import { link, rmSync } from 'fs'
 //     potatoEmitter.emit('potato', ' with data');
 // });
 
+// code for emmiter phone call example
 
-import readline from 'readline'; 
+// import readline from 'readline';
 
-import callEmitter from './phone/phone.js';
+// import callEmitter from './phone/phone.js';
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
-rl.question('do you wan to send email or phone call \n', (answer) => {
-  switch (answer) {
-    case "1":
-        // write a code to send email
-        break;
-    case "2":
-        callEmitter.emit('call'); 
-        break;
-    default:
-        console.log("invalid input");
-        break;
+// rl.question('do you wan to send email or phone call \n', (answer) => {
+//   switch (answer) {
+//     case "1":
+//         // write a code to send email
+//         break;
+//     case "2":
+//         callEmitter.emit('call');
+//         // callEmitter.emit('potato');
+//         break;
+//     default:
+//         console.log("invalid input");
+//         break;
+//   }
+//   rl.close();
+// });
+
+// http module
+import http from 'http'
+
+const students = [
+  { name: 'rahul', age: 26 },
+  { name: 'Rohan', age: 24 },
+  { name: 'ankur', age: 25 },
+]
+
+const server = http.createServer((req, res) => {
+  if (req.url === '/api/v1/students') {
+    if (req.method === 'GET') {
+      res.statusCode = 200
+      res.end(JSON.stringify({ data: students }))
+    } else if (req.method === 'POST') {
+    let body = '';
+     req.on('data', chunk => {
+      body += chunk.toString();
+     });
+     req.on('end', () => {
+       const { name, age } = JSON.parse(body);
+       students.push({ name, age });
+       res.statusCode = 201
+       res.end(JSON.stringify({ data: students }))
+     });
+    }
   }
-  rl.close();
-});
+  // res.statusCode = 200;
+  // res.write("data from file1");
+
+  // res.write("data from file2");
+
+  // res.end();
+
+  // // this will not work
+  // res.write("data from file3");
+})
+
+server.listen(3000, () => {
+  console.log('server started')
+})
