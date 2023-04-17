@@ -164,7 +164,7 @@ const server = http.createServer((req, res) => {
       res.statusCode = 200
       res.end(JSON.stringify({ data: students }))
     } else if (req.method === 'POST') {
-    let body = '';
+     let body = '';
      req.on('data', chunk => {
       body += chunk.toString();
      });
