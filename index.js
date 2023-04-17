@@ -66,14 +66,12 @@
 // import TestPotaot,{xyz,a,b} from './test.js';
 // import ReactPotato,{useState} from 'react';
 
-// 
+//
 // import * as ALL from './test.js';
-
 
 // ALL.default();
 
 // console.log(ALL);
-
 
 // TEST();
 
@@ -82,5 +80,70 @@
 // os module
 
 // import test1 from './coreOs.js';
-// import test from './coreFile.js';
+import './coreFile.js'
+// import potatoEmitter from './events.js';
+import EventEmitter from 'events'
+import { link, rmSync } from 'fs'
 
+// emmiter
+
+// const browserEventEmitter = new EventEmitter()
+
+// const emailEmitter = new EventEmitter();
+// const phoneEmitter = new EventEmitter();
+
+// phoneEmitter.on()
+
+// // 'click'
+// emailEmitter.on('send', (data) => {
+//     console.log('someone sent an email', data.name);
+// });
+
+// setTimeout(()=>{
+//     emitter.emit('send', {name:"rahul"});
+// },2000)
+
+// li.addEventListener('click',()=>{})
+
+// function addEventListener(type, callback) {
+//   switch (type) {
+//     case 'click':
+//       browserEventEmitter.on('click', callback)
+//   }
+// }
+
+
+// function mouseClick() {
+//   browserEventEmitter.emit('click', { traget: 'rahul' })
+// }
+
+// const el = document.getElementById('button');
+// el.addEventListener('click', (el) => {
+//     el.target.value;
+//     potatoEmitter.emit('potato', ' with data');
+// });
+
+
+import readline from 'readline'; 
+
+import callEmitter from './phone/phone.js';
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('do you wan to send email or phone call \n', (answer) => {
+  switch (answer) {
+    case "1":
+        // write a code to send email
+        break;
+    case "2":
+        callEmitter.emit('call'); 
+        break;
+    default:
+        console.log("invalid input");
+        break;
+  }
+  rl.close();
+});

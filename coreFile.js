@@ -19,3 +19,8 @@ import fs from 'fs'
 // console.log('will this run before or after?')
 
 // export default 'Hello World'
+
+// fs.appendFile('testFile/test.txt','you are poor by ram');
+
+// console.log('will this run before or after?');
+
