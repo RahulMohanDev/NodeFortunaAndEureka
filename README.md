@@ -138,3 +138,22 @@ However, if **`chunk`** is not a **`Buffer`** object, you can use **`Buffer.from
 For example, if you receive data in the form of a string, you can use **`Buffer.from(string)`** to create a new **`Buffer`** object from the string data.
 
 So, in summary, if **`chunk`** is already a **`Buffer`** object, there is no need to use **`Buffer.from(chunk)`** to create a new **`Buffer`** object, but if **`chunk`** is not a **`Buffer`** object, **`Buffer.from()`** can be used to create one.
+
+
+# what is chuck
+
+
+req.on('data', (chuck) => {
+})
+
+The code you provided is using the **`on`** method of a Node.js **`http.IncomingMessage`** object to listen for the **`'data'`** event.
+
+This event is emitted whenever the server receives data as part of the HTTP request body, usually in the form of a **`POST`** or **`PUT`** request.
+
+The **`on`** method takes two arguments: the event name (**`'data'`** in this case), and a callback function to handle the event.
+
+In the provided code, the callback function is an arrow function that takes one parameter (**`chunk`**), which represents a piece of the request body data received by the server.
+
+This callback function is executed each time a new chunk of data is received, allowing the server to process the request body in chunks rather than all at once.
+
+This is useful for handling large amounts of data or streaming data in real-time. The callback function can manipulate or store the received data as needed before the **`'end'`** event is emitted, indicating that all data has been received.
